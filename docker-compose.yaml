@@ -1,7 +1,7 @@
 services:
   api:
     container_name: evolution_api
-    image: atendai/evolution-api:homolog
+    image: atendai/evolution-api:latest
     restart: always
     depends_on:
       - redis
@@ -34,7 +34,7 @@ services:
     image: postgres:15
     networks:
       - evolution-net
-    command: ["postgres", "-c", "max_connections=1000", "-c", "listen_addresses=*"]
+    command: [ "postgres", "-c", "max_connections=1000", "-c", "listen_addresses=*" ]
     restart: always
     ports:
       - 5432:5432
